@@ -68,28 +68,29 @@ function App() {
                   <div key={categorie.id}>
                     <h2>{categorie.name}</h2>
                     {productsInCategory.map((product) => {
-                      {
-                        console.log(product);
-                      }
-                      <div className="card" key={product.id}>
-                        <div className="dish">
-                          <div className="dish-desc">{product.name}</div>
-                          <div className="price">{product.price.formatted}</div>
+                      return (
+                        <div className="card" key={product.id}>
+                          <div className="dish">
+                            <div className="dish-title">{product.name}</div>
+                            <div className="dish-desc">
+                              {product.description}
+                            </div>
+                            <div className="dish-price">
+                              {product.price.formatted}
+                            </div>
+                            {/* {console.log(product.image.url)} */}
+                            {product.image && product.image.url && (
+                              <img src={product.image.url} alt="Dishes image" />
+                            )}{" "}
+                          </div>
                         </div>
-                      </div>;
+                      );
                     })}
                   </div>
                 );
               })}
             </div>
           </div>
-          {/* <div className="card">
-                <div className="dish">
-                  <div className="dish-desc">Brunch authentique 1 personne</div>
-                  <div className="price">00,00€</div>
-                </div>
-                <img src={dishImage} alt="Dish image" className="dish-photo" />
-              </div> */}
         </div>
       )}
     </>
