@@ -79,12 +79,12 @@ header .container {
 }
 .dish {
   display: flex;
-  gap: 24px;
+  gap: 12px;
   background-color: #fff;
   border-radius: 5px;
   padding: 18px;
   transition-duration: 0.15s;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.05);
 }
 
 .dish:hover {
@@ -102,12 +102,13 @@ header .container {
 .dish-desc {
   margin-top: 4px;
   font-size: 14px;
-  color: #2e3333;
+  color: #868a8a;
   line-height: 20px;
   margin-bottom: 12px;
 }
 .dish-price {
   margin-top: 4px;
+  color: #868a8a;
   font-size: 17px;
 }
 .dish-image {

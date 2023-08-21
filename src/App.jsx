@@ -74,7 +74,7 @@ function App() {
                         return (
                           <div className="dish" key={product.id}>
                             <div className="left">
-                              <div className="dish-title">{product.name}</div>
+                              <h3 className="dish-title">{product.name}</h3>
                               <div className="dish-desc">
                                 {product.description &&
                                 product.description.length > 55
