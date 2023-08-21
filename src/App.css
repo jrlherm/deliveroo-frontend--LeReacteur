@@ -68,10 +68,10 @@ header .container {
 }
 
 .card {
+  width: calc(100% - 400px);
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Deux colonnes avec largeur égale */
-  gap: 24px; /* Espace entre les produits */
-  width: calc(100% - 400px);
+  gap: 24px; /* Espace entre les colonnes */
 }
 
 .dish-photo {
@@ -79,6 +79,7 @@ header .container {
 }
 .dish {
   display: flex;
+  justify-content: space-between;
   gap: 12px;
   background-color: #fff;
   border-radius: 5px;
