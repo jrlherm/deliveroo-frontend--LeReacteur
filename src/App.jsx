@@ -23,7 +23,6 @@ function App() {
         // Je fais une requête axios et j'attend que le résultat arrive
         "https://site--deliveroo-backend--vm2w9vyj7r62.code.run/"
       );
-      console.log(response.data.header.title);
       setData(response.data); // Je stocke le résultat dans mon state data
       setIsLoading(false); // Je fais paser isLoading à false
     };
@@ -34,42 +33,65 @@ function App() {
   return (
     <>
       {/* Si isLoading === true, c'est que la réponse du serveur n'est pas encore arrivée, donc j'affiche Chargement... afin d'éviter d'avoir une erreur car data est undefined. */}
-      {isLoading ? <p>Chargement ...</p> : <p>{data.header.title}</p>}
-      {console.log(data.header.title)}
-      <div className="main">
-        <Header />
+      {isLoading ? (
+        <p>Chargement ...</p>
+      ) : (
+        <div className="main">
+          <Header />
 
-        {/* <Restaurant /> */}
-        <div className="container">
-          <section className="restaurant">
-            <div className="left">
-              <h1 className="restaurant-name">azeaze</h1>
-              <p className="restaurant-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, perferendis dignissimos. Nobis recusandae
-                exercitationem. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit.
-              </p>
-            </div>
-            <div className="right">
-              <img src={restaurantImage} alt="Photo of the restaurant" />
-            </div>
-          </section>
-        </div>
-        {/* <Menu /> */}
-        <div className="menu">
+          {/* <Restaurant /> */}
           <div className="container">
-            <h2>Brunchs</h2>
-            <div className="card">
-              <div className="dish">
-                <div className="dish-desc">Brunch authentique 1 personne</div>
-                <div className="price">00,00€</div>
+            <section className="restaurant">
+              <div className="left">
+                <h1 className="restaurant-name">{data.header.title}</h1>
+                <p className="restaurant-description">
+                  {data.meta.metatags.descriptionSocial}
+                </p>
               </div>
-              <img src={dishImage} alt="Dish image" className="dish-photo" />
+              <div className="right">
+                <img
+                  src={data.header.image.url}
+                  alt="Photo of the restaurant"
+                />
+              </div>
+            </section>
+          </div>
+
+          {/* <Menu /> */}
+          <div className="menu">
+            <div className="container">
+              {data.meta.categories.map((categorie, index) => {
+                const productsInCategory = data.items.filter(
+                  (product) => product.categoryId === categorie.id
+                );
+                return (
+                  <div key={categorie.id}>
+                    <h2>{categorie.name}</h2>
+                    {productsInCategory.map((product) => {
+                      {
+                        console.log(product);
+                      }
+                      <div className="card" key={product.id}>
+                        <div className="dish">
+                          <div className="dish-desc">{product.name}</div>
+                          <div className="price">{product.price.formatted}</div>
+                        </div>
+                      </div>;
+                    })}
+                  </div>
+                );
+              })}
             </div>
           </div>
+          {/* <div className="card">
+                <div className="dish">
+                  <div className="dish-desc">Brunch authentique 1 personne</div>
+                  <div className="price">00,00€</div>
+                </div>
+                <img src={dishImage} alt="Dish image" className="dish-photo" />
+              </div> */}
         </div>
-      </div>
+      )}
     </>
   );
 }
