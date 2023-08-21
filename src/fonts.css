@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "IBMPlexSans";
+  src: url("./assets/fonts/IBMPlexSans.woff2") format("woff2"),
+    url("./assets/fonts/IBMPlexSans.woff") format("woff"),
+    url("./assets/fonts/IBMPlexSans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/*
+@font-face {
+  font-family: "IBMPlexSans";
+  src: url("./assets/fonts/StratosDeliverooWeb-SemiBold.woff2") format("woff2"),
+    url("./assets/fonts/StratosDeliverooWeb-SemiBold.woff2") format("woff"),
+    url("./assets/fonts/StratosDeliverooWeb-SemiBold.ttf") format("truetype");
+  font-weight: semi-bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexSans";
+  src: url("./assets/fonts/StratosDeliverooWeb-Bold.woff2") format("woff2"),
+    url("./assets/fonts/StratosDeliverooWeb-Bold.woff2") format("woff"),
+    url("./assets/fonts/StratosDeliverooWeb-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+} */

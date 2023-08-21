@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 
+import "./fonts.css";
+
 import Header from "./assets/components/Header";
 
 // import Restaurant from "./assets/components/Restaurant";
@@ -67,25 +69,36 @@ function App() {
                 return (
                   <div key={categorie.id}>
                     <h2>{categorie.name}</h2>
-                    {productsInCategory.map((product) => {
-                      return (
-                        <div className="card" key={product.id}>
-                          <div className="dish">
-                            <div className="dish-title">{product.name}</div>
-                            <div className="dish-desc">
-                              {product.description}
+                    <div className="card">
+                      {productsInCategory.map((product) => {
+                        return (
+                          <div className="dish" key={product.id}>
+                            <div className="left">
+                              <div className="dish-title">{product.name}</div>
+                              <div className="dish-desc">
+                                {product.description &&
+                                product.description.length > 55
+                                  ? product.description.slice(0, 55) + "..."
+                                  : product.description}
+                              </div>
+                              <div className="dish-price">
+                                {product.price.formatted}
+                              </div>
                             </div>
-                            <div className="dish-price">
-                              {product.price.formatted}
+
+                            <div className="right">
+                              {product.image && product.image.url && (
+                                <img
+                                  className="dish-image"
+                                  src={product.image.url}
+                                  alt="Dishes image"
+                                />
+                              )}
                             </div>
-                            {/* {console.log(product.image.url)} */}
-                            {product.image && product.image.url && (
-                              <img src={product.image.url} alt="Dishes image" />
-                            )}{" "}
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
                 );
               })}

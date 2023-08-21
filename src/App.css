@@ -4,14 +4,23 @@
 .container {
   width: 1200px;
   margin: 0 auto;
+  font-family: "IBMPlexSans";
+  font-weight: normal;
 }
 
 h1 {
   font-size: 32px;
+  font-weight: bold;
 }
 
 h2 {
   font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 32px;
+  margin-top: 80px;
+}
+#root > div > div.menu > div > div:nth-child(1) > h2 {
+  margin-top: 20px;
 }
 
 /* ------ */
@@ -42,7 +51,7 @@ header .container {
 .restaurant {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 50px;
   padding: 30px 0;
 }
 .restaurant img {
@@ -57,9 +66,54 @@ header .container {
   background-color: #f3f5f5;
   padding: 30px 0;
 }
+
 .card {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes avec largeur égale */
+  gap: 24px; /* Espace entre les produits */
+  width: calc(100% - 400px);
 }
+
 .dish-photo {
   width: 300px;
+}
+.dish {
+  display: flex;
+  gap: 24px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 18px;
+  transition-duration: 0.15s;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.05);
+}
+
+.dish:hover {
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.05);
+  transform: translateY(-3px) scale(1.01);
+}
+
+.dish-title {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  color: #2e3333;
+  margin-bottom: 12px;
+}
+.dish-desc {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #2e3333;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+.dish-price {
+  margin-top: 4px;
+  font-size: 17px;
+}
+.dish-image {
+  width: 150px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
+  height: 150px;
+  object-fit: cover;
 }
