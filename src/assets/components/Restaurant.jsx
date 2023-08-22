@@ -1,6 +1,4 @@
-import restaurantImage from "../images/header-image.jpg";
-
-const Restaurant = (data) => {
+const Restaurant = ({ data }) => {
   return (
     <div className="container">
       <section className="restaurant">
@@ -11,7 +9,6 @@ const Restaurant = (data) => {
           </p>
         </div>
         <div className="right">
-          {console.log(data.header.image.url)}
           <img src={data.header.image.url} alt="Photo of the restaurant" />
         </div>
       </section>

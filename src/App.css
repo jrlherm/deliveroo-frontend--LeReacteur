@@ -20,8 +20,16 @@ h2 {
   margin-bottom: 32px;
   margin-top: 80px;
 }
-#root > div > div.menu > div > div:nth-child(1) > h2 {
+#root > div > div.grey > div > div > div:nth-child(1) > h2 {
   margin-top: 20px;
+}
+
+.grey {
+  background-color: #f3f5f5;
+}
+.grey .container {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* ------ */
@@ -79,9 +87,9 @@ header .container {
   /* justify-content: center; */
 }
 
-/* ------------------ */
-/* Restaurant Section */
-/* ------------------ */
+/* ------------------------- */
+/* Restaurant Header Section */
+/* ------------------------- */
 .restaurant-description {
   font-size: 19px;
   line-height: 28px;
@@ -103,12 +111,11 @@ header .container {
 /* Menu */
 /* ---- */
 .menu {
-  background-color: #f3f5f5;
   padding: 30px 0;
 }
 
 .card {
-  width: calc(100% - 400px);
+  width: 800px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Deux colonnes avec largeur égale */
   gap: 24px; /* Espace entre les colonnes */
@@ -121,6 +128,8 @@ header .container {
   display: flex;
   justify-content: space-between;
   gap: 12px;
+  box-sizing: border-box;
+  /* height: 160px; */
   background-color: #fff;
   border-radius: 5px;
   padding: 18px;
@@ -166,4 +175,64 @@ header .container {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
   height: 150px;
   object-fit: cover;
+}
+
+/* ---- */
+/* CART */
+/* ---- */
+.cart {
+  position: sticky;
+  top: 40px;
+
+  margin-top: 50px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 12px;
+  width: 350px;
+  box-sizing: border-box;
+}
+.cart button {
+  width: 100%;
+  background-color: #00cdbd;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+.cart button.grey-btn {
+  background-color: #bac3c3;
+  color: #8b9a9b;
+}
+
+.cart .flex-cart-items {
+  display: flex;
+  justify-content: space-between;
+}
+.cart .product span {
+  margin: 12px 0;
+}
+.cart .products {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid lightgrey;
+}
+.cart .price-calcul {
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.cart .price-calcul .sous-total {
+  margin-bottom: 18px;
+}
+
+.empty-cart {
+  height: 189px;
+}
+.empty-cart p {
+  text-align: center;
+  margin-top: 32px;
+  color: #868a8a;
 }
