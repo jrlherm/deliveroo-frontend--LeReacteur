@@ -5,22 +5,62 @@
   width: 1200px;
   margin: 0 auto;
   font-family: "IBMPlexSans";
-  font-weight: normal;
+  font-weight: 400;
 }
 
 h1 {
+  font-family: "StratosDeliverooWeb";
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 h2 {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 32px;
   margin-top: 80px;
 }
 #root > div > div.menu > div > div:nth-child(1) > h2 {
   margin-top: 20px;
+}
+
+/* ------ */
+/* LOADER */
+/* ------ */
+.loader-block {
+  height: 100vh;
+  margin-top: 0px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #01ccbc;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader-block img {
+  width: 300px;
+  margin-bottom: 200px;
+}
+.loader-block span {
+  scale: 1.2;
 }
 
 /* ------ */
@@ -96,7 +136,7 @@ header .container {
 .dish-title {
   font-size: 18px;
   line-height: 26px;
-  font-weight: bold;
+  font-weight: 400;
   color: #2e3333;
   margin-bottom: 12px;
 }
@@ -111,6 +151,14 @@ header .container {
   margin-top: 4px;
   color: #868a8a;
   font-size: 17px;
+}
+.dish-price .popular {
+  font-size: 14px;
+  margin-left: 10px;
+  margin-top: -15px;
+  color: #ff8000;
+  font-weight: 600;
+  transform: translateY(-30px);
 }
 .dish-image {
   width: 150px;

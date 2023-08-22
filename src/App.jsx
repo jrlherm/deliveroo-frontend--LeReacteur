@@ -4,13 +4,11 @@ import axios from "axios";
 
 import "./fonts.css";
 
+import Loader from "./assets/components/Loader";
 import Header from "./assets/components/Header";
 
 // import Restaurant from "./assets/components/Restaurant";
 // import Menu from "./assets/components/Menu";
-
-import dishImage from "./assets/images/dish-image.jpg";
-import restaurantImage from "./assets/images/header-image.jpg";
 
 function App() {
   // State qui contiendra le data (la réponse du serveur)
@@ -21,12 +19,16 @@ function App() {
   useEffect(() => {
     // La fonction du useEffect ne peut pas être asynchrone, je déclare donc une fonction asynchrone à l'intérieur et je l'appelle immédiatement
     const fetchData = async () => {
-      const response = await axios.get(
-        // Je fais une requête axios et j'attend que le résultat arrive
-        "https://site--deliveroo-backend--vm2w9vyj7r62.code.run/"
-      );
-      setData(response.data); // Je stocke le résultat dans mon state data
-      setIsLoading(false); // Je fais paser isLoading à false
+      try {
+        const response = await axios.get(
+          // Je fais une requête axios et j'attend que le résultat arrive
+          "https://site--deliveroo-backend--vm2w9vyj7r62.code.run/"
+        );
+        setData(response.data); // Je stocke le résultat dans mon state data
+        setIsLoading(false); // Je fais paser isLoading à false
+      } catch (error) {
+        console.log(error.message);
+      }
     };
     // J'apelle immédiatement ma fonction fetchData
     fetchData();
@@ -36,7 +38,7 @@ function App() {
     <>
       {/* Si isLoading === true, c'est que la réponse du serveur n'est pas encore arrivée, donc j'affiche Chargement... afin d'éviter d'avoir une erreur car data est undefined. */}
       {isLoading ? (
-        <p>Chargement ...</p>
+        <Loader />
       ) : (
         <div className="main">
           <Header />
@@ -82,7 +84,10 @@ function App() {
                                   : product.description}
                               </div>
                               <div className="dish-price">
-                                {product.price.formatted}
+                                <span>{product.price.formatted}</span>
+                                <span className="popular">
+                                  {product.popular ? "⭐️ Populaire" : ""}
+                                </span>
                               </div>
                             </div>
 

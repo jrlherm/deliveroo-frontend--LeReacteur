@@ -3,29 +3,27 @@
   src: url("./assets/fonts/IBMPlexSans.woff2") format("woff2"),
     url("./assets/fonts/IBMPlexSans.woff") format("woff"),
     url("./assets/fonts/IBMPlexSans.ttf") format("truetype");
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
-/*
+
 @font-face {
-  font-family: "IBMPlexSans";
+  font-family: "StratosDeliverooWeb";
   src: url("./assets/fonts/StratosDeliverooWeb-SemiBold.woff2") format("woff2"),
     url("./assets/fonts/StratosDeliverooWeb-SemiBold.woff2") format("woff"),
     url("./assets/fonts/StratosDeliverooWeb-SemiBold.ttf") format("truetype");
-  font-weight: semi-bold;
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
-
 }
 
 @font-face {
   font-family: "IBMPlexSans";
-  src: url("./assets/fonts/StratosDeliverooWeb-Bold.woff2") format("woff2"),
-    url("./assets/fonts/StratosDeliverooWeb-Bold.woff2") format("woff"),
-    url("./assets/fonts/StratosDeliverooWeb-Bold.ttf") format("truetype");
-  font-weight: bold;
+  src: url("./assets/fonts/IBMPlexSans-Bold.woff2") format("woff2"),
+    url("./assets/fonts/IBMPlexSans-Bold.woff") format("woff"),
+    url("./assets/fonts/IBMPlexSans-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
-    font-display: swap;
-
-} */
+  font-display: swap;
+}
