@@ -6,7 +6,7 @@
 
 ## Used in this project
 * [![React][React.js]][React-url]
-* [![Express][Express.js]][Express-url]
+* ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
 ### Running the project
 
