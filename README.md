@@ -6,7 +6,7 @@
 
 ## Used in this project
 * [![React][React.js]][React-url]
-* [![React][React.js]][React-url]
+* [![Express][Express.js]][Express-url]
 
 ### Running the project
 
